@@ -88,16 +88,16 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form action="#contact">
+      <form action="#contact" onsubmit="sendEmail(); reset(); return false;">
         <div class="input-box">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
+          <input type="text" id="name"placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email Address" required>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Mobile Number">
-          <input type="text" placeholder="Email Subject">
+          <input type="text" id="phone" placeholder="Mobile Number" required>
+          <input type="text" id="subject "placeholder="Email Subject" required>
         </div>
-          <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
           <input type="submit" value="Send Message" class="btn">
       </form>
     </section>
@@ -114,7 +114,23 @@
 
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          SecureToken: "836703e5-1dfd-4065-8ad0-aa386c202b14",
+          To : 'edu1blogger@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : document.getElementById("subject").value,
+          Body : "Name: " + document.getElementById("nama").value
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> No Phone: " + document.getElementById("phone").value
+            + "<br> Message: " + document.getElementById("message").value
+        }).then(
+          message => alert("Message sent Succesfully")
+        );
+      }
+    </script>
     <!-- typed js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
