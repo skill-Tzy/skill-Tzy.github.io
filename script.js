@@ -75,9 +75,9 @@ btn.addEventListener('click',function(e){
         SecureToken : "3f654c30-6d5e-4179-80f2-e1234dd137d8",
         To : 'edu1blogger@gmail.com',
         From : "iwanfaiber1@gmail.com",
-        Subject : document.getElementById('subject').value,
+        Subject : document.getElementById("subject").value,
         Body : body
     }).then(
-      message => alert("Message Sent Succesfully"")
+      message => alert("Message Sent Succesfully")
     );
 })
