@@ -66,7 +66,11 @@ btn.addEventListener('click',function(e){
     var phone = document.getElementById('phone').value;
     var subject = document.getElementById('subject').value;
     var message = document.getElementById('message').value;
-    var body = 'name: '+name + '</br> email: ' +email + '</br> phone: ' +phone + '</br> subject: ' +subject + '</br> message:' +message;
+    var body = 'name: '+name, 
+        + '</br> email: ' +email, 
+        + '</br> phone: ' +phone, 
+        + '</br> subject: ' +subject, 
+        + '</br> message:' +message;
     Email.send({
         SecureToken : "3f654c30-6d5e-4179-80f2-e1234dd137d8",
         To : 'edu1blogger@gmail.com',
