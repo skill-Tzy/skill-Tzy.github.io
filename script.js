@@ -57,3 +57,23 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true 
 });
+/*==================== contact js ====================*/
+var btn = document.getElementById('btn');
+btn.addEventListener('click',function(e){
+    e.preventDefault()
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var body = 'name: '+name + '</br> email: ' +email + '</br> phone: ' +phone + '</br> subject: ' +subject + '</br> message:' +message;
+    Email.send({
+        SecureToken : "3f654c30-6d5e-4179-80f2-e1234dd137d8",
+        To : 'edu1blogger@gmail.com',
+        From : "iwanfaiber1@gmail.com",
+        Subject : "Contact Message",
+        Body : body
+    }).then(
+      message => alert("Check")
+    );
+})
